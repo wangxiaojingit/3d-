@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>旋转的魔方</title>
+  <style type="text/css" rel="stylesheet">
+   *{margin:0;padding;0;}
+   #main{width:200px;height:200px;position:absolute;left:50%;top:30%;transform:translate(-50%)}
+   #main>.cubebig{position:absolute;left:0px;top:0px;width:100%;height:100%;perspective:2000px;
+   transform-style:preserve-3d;transform:rotateX(10deg) rotateY(10deg);
+   animation:cubeMove 10s linear infinite both;
+   }
+   #main>.cubebig>.biga{position:absolute;}
+/* 大魔方 */
+
+/* 前面 */
+#main>.cubebig>.biga{
+  opacity:.7;
+}
+#main>.cubebig>.biga:nth-child(1){
+  transform:translateZ(100px);
+}
+/* 后面 */
+#main>.cubebig>.biga:nth-child(2){
+  transform:translateZ(-100px) rotateY(-180deg);
+}
+/* 左面 */
+#main>.cubebig>.biga:nth-child(3){
+  transform:translateX(-100px) rotateY(-90deg);
+}
+/* 右面 */
+#main>.cubebig>.biga:nth-child(4){
+  transform:translateX(100px) rotateY(90deg);
+}
+/* 上面 */
+#main>.cubebig>.biga:nth-child(5){
+  transform:translateY(-100px) rotateX(-90deg);
+}
+
+/* 下面 */
+#main>.cubebig>.biga:nth-child(6){
+  transform:translateY(100px) rotateX(90deg);
+}
+
+/* 鼠标滑上去 */
+
+#main>.cubebig:hover{
+  cursor: pointer;
+}
+
+#main>.cubebig:hover>.biga:nth-child(1){
+  transform:translateZ(200px);
+}
+/* 后面 */
+#main>.cubebig:hover>.biga:nth-child(2){
+  transform:translateZ(-200px) rotateY(-180deg);
+}
+/* 左面 */
+#main>.cubebig:hover>.biga:nth-child(3){
+  transform:translateX(-200px) rotateY(-90deg);
+}
+/* 右面 */
+#main>.cubebig:hover>.biga:nth-child(4){
+  transform:translateX(200px) rotateY(90deg);
+}
+/* 上面 */
+#main>.cubebig:hover>.biga:nth-child(5){
+  transform:translateY(-200px) rotateX(-90deg);
+}
+
+/* 下面 */
+#main>.cubebig:hover>.biga:nth-child(6){
+  transform:translateY(200px) rotateX(90deg);
+}
+
+   #main>.cubebig>.cubesmall{
+    position:absolute;
+    transform-style:preserve-3d;
+    left:50%;
+    top:50%;
+    margin-left:-50px;
+    margin-top:-50px; 
+    width:100px;
+    height:100px;
+   }
+   #main>.cubebig>.cubesmall>.sma{
+    position:absolute;
+    left:0px;
+    top:0px;
+   }
+
+/* 小魔方 */
+
+/* 前面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(1){
+  transform:translateZ(50px);
+}
+/* 后面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(2){
+  transform:translateZ(-50px) rotateY(-180deg);
+}
+/* 左面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(3){
+  transform:translateX(-50px) rotateY(-90deg);
+}
+/* 右面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(4){
+  transform:translateX(50px) rotateY(90deg);
+}
+/* 上面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(5){
+  transform:translateY(-50px) rotateX(-90deg);
+}
+
+/* 下面 */
+#main>.cubebig>.cubesmall>.sma:nth-child(6){
+  transform:translateY(50px) rotateX(90deg);
+}
+
+@-webkit-keyframes cubeMove {
+  from{
+    transform:rotateX(0deg) rotateY(0deg)
+  }
+  to{
+    transform:rotateX(360deg) rotateY(360deg)
+  }
+  
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="main">
+    <!-- 大魔方 -->
+    <div class="cubebig">
+      <div class="biga"><img width="200" height="200" src="image/mf1.png" alt=""></div>
+      <div class="biga"><img width="200" height="200" src="image/mf2.png" alt=""></div>
+      <div class="biga"><img width="200" height="200" src="image/mf3.png" alt=""></div>
+      <div class="biga"><img width="200" height="200" src="image/mf4.png" alt=""></div>
+      <div class="biga"><img width="200" height="200" src="image/mf5.png" alt=""></div>
+      <div class="biga"><img width="200" height="200" src="image/mf6.png" alt=""></div>
+     <div class="cubesmall">
+          <div class="sma"><img width="100" height="100" src="image/x1.png" alt=""></div>
+          <div class="sma"><img width="100" height="100" src="image/x2.png" alt=""></div>
+          <div class="sma"><img width="100" height="100" src="image/x3.png" alt=""></div>
+          <div class="sma"><img width="100" height="100" src="image/x4.png" alt=""></div>
+          <div class="sma"><img width="100" height="100" src="image/x5.png" alt=""></div>
+          <div class="sma"><img width="100" height="100" src="image/x6.png" alt=""></div>
+      </div> 
+    </div>
+  </div>
+</body>
+</html>

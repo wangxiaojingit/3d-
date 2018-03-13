@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旋转魔方2</title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+    body,html{width:100%;height:100%}
+    .main{
+        width:200px;
+        height:200px;
+        position: relative;
+        margin:100px auto;
+        perspective:1000px;
+    }
+    .cube{
+        position: absolute;
+        width:200px;
+        height:200px;
+        transform-style:preserve-3d;
+        transform:rotateX(0deg) rotateY(0deg);
+        
+        
+    }
+    .cube>li{
+        width:100%;
+        height:100%;
+        display:block;
+        position: absolute;
+        
+    }
+    /* 前面 */
+    .cube>li:nth-child(1){
+      transform:translateZ(100px);
+      opacity:0.7
+        
+    }
+    /* 后面 */
+    .cube>li:nth-child(2){
+      transform:translateZ(-100px) rotateY(180deg);
+      opacity:0.7
+    }
+    /* 左面 */
+    .cube>li:nth-child(3){
+      transform:translateX(-100px) rotateY(-90deg);
+      opacity:0.7
+    }
+    /* 右面 */
+    .cube>li:nth-child(4){
+      transform:translateX(100px) rotateY(90deg);
+      opacity:0.7
+    }
+    /*上面 */
+   .cube>li:nth-child(5){
+      transform:translateY(-100px) rotateX(-90deg);
+      opacity:0.7
+    } 
+    /*下面 */
+    .cube>li:nth-child(6){
+      transform:translateY(100px) rotateX(90deg);
+      opacity:0.7
+    } 
+   /* 小魔方的样式 */
+
+/* 前面 */
+.cube>li:nth-child(7){
+      width:100px;
+      height:100px;
+      transform:translateZ(50px);
+      left:50px;
+      top:50px;
+        
+    }
+    /* 后面 */
+    .cube>li:nth-child(8){
+      width:100px;
+      height:100px;
+      transform:translateZ(-50px) rotateY(180deg);
+      left:50px;
+      top:50px;
+    }
+    /* 左面 */
+    .cube>li:nth-child(9){
+      width:100px;
+      height:100px;
+      left:50px;
+      top:50px;
+      transform:translateX(-50px) rotateY(-90deg);
+    }
+    /* 右面 */
+    .cube>li:nth-child(10){
+      width:100px;
+      height:100px;
+      left:50px;
+      top:50px;
+      transform:translateX(50px) rotateY(90deg);
+    }
+    /*上面 */
+    
+   .cube>li:nth-child(11){
+    width:100px;
+      height:100px;
+      left:50px;
+      top:50px;
+      transform:translateY(-50px) rotateX(-90deg);
+    } 
+    /*下面 */
+    .cube>li:nth-child(12){
+      width:100px;
+      height:100px;
+      left:50px;
+      top:50px;
+      transform:translateY(50px) rotateX(90deg);
+    } 
+    @-webkit-keyframes cubeMove {
+       
+       from{
+         transform:rotateX(0deg) rotateY(0deg)
+       }
+
+       to{
+        transform:rotateX(360deg) rotateY(360deg)
+       }
+   } 
+   .cube{
+        animation:cubeMove 5s linear infinite both; 
+        
+   }
+
+   /* 鼠标滑上的样式 */
+   .cube:hover{
+     cursor: pointer;
+   }
+   /* 前面 */
+   .cube:hover>li:nth-child(1){
+    transform:translateZ(200px);
+      
+  }
+  /* 后面 */
+  .cube:hover>li:nth-child(2){
+    transform:translateZ(-200px) rotateY(180deg);
+  }
+  /* 左面 */
+  .cube:hover>li:nth-child(3){
+    transform:translateX(-200px) rotateY(-90deg);
+  }
+  /* 右面 */
+  .cube:hover>li:nth-child(4){
+    transform:translateX(200px) rotateY(90deg);
+  }
+  /*上面 */
+ .cube:hover>li:nth-child(5){
+    transform:translateY(-200px) rotateX(-90deg);
+  } 
+  /*下面 */
+  .cube:hover>li:nth-child(6){
+    transform:translateY(200px) rotateX(90deg);
+  } 
+ 
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul class="cube">
+          <li><img width="200" height="200" src="image/mf1.png" alt=""></li>
+          <li><img width="200" height="200" src="image/mf2.png" alt=""></li>
+          <li><img width="200" height="200" src="image/mf3.png" alt=""></li>
+          <li><img width="200" height="200" src="image/mf4.png" alt=""></li>
+          <li><img width="200" height="200" src="image/mf5.png" alt=""></li>
+          <li><img width="200" height="200" src="image/mf6.png" alt=""></li>
+          <!-- 小魔方 -->
+          <li><img width="100" height="100" src="image/x1.png" alt=""></li>
+          <li><img width="100" height="100" src="image/x2.png" alt=""></li>
+          <li><img width="100" height="100" src="image/x3.png" alt=""></li>
+          <li><img width="100" height="100" src="image/x4.png" alt=""></li>
+          <li><img width="100" height="100" src="image/x5.png" alt=""></li>
+          <li><img width="100" height="100" src="image/x6.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
+       

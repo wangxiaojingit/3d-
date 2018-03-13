@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复习transform</title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+    .box{width:100px;height:100px;background:url("image/mf1.png");
+    background-size:100%;margin:100px auto;transform:translateY(100px) rotate(45deg)}
+
+    /* transform 中的rotate 默认是沿着z轴旋转,(把屏幕当成一个平面,垂直于这个平面的就是z轴),
+    如果改为rotateX(45deg),沿着x轴旋转和沿着y轴旋转都是3d,默认的是2d,所以达不到3d的效果 */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
